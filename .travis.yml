@@ -1,0 +1,9 @@
+sudo: recommended
+services:
+  - docker
+before_install:
+  - docker build -t mohannedwar4/docker-react -f Dockerfile.dev .
+
+scripts:
+  - docker run mohannedwar4/docker-react npm run test -- --coverage
+ 
